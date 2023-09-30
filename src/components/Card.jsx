@@ -1,10 +1,10 @@
-const Card = () => {
+const Card = ({ title, price, desc, img }) => {
   return (
     <div className="card">
-      <img src="" alt="title" />
-      <div className="title">Title</div>
-      <div className="price">Price</div>
-      <div className="desc">Description</div>
+      <img src={img} alt={title} />
+      <div className="title">{title}</div>
+      <div className="price">${price}</div>
+      <div className="desc">{desc}</div>
       <div className="inputs">
         <button>-</button>
         <input type="text" />

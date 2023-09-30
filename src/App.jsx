@@ -1,23 +1,26 @@
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./App.css";
+import Layout from "./components/Layout";
+import Home from "./components/Home";
+import Products from "./components/Products";
+import Cart from "./components/Cart";
+import ErrorPage from "./components/ErrorPage";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      { path: "/", element: <Home /> },
+      { path: "products", element: <Products /> },
+      { path: "cart", element: <Cart /> },
+    ],
+    errorElement: <ErrorPage />,
+  },
+]);
 
 function App() {
-  return (
-    <div className="App">
-      <section className="left-section">
-        <h1 className="header">Welcome to Shop</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-          fermentum pellentesque volutpat. Fusce convallis posuere suscipit.
-          Praesent non sagittis risus. Nam viverra elit metus, id mattis sem
-          congue sit amet. Nulla porttitor ipsum vitae odio sodales, vel feugiat
-          neque scelerisque.
-        </p>
-      </section>
-      <section className="right-section">
-        <div>DUMMY IMAGE</div>
-      </section>
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

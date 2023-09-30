@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import Products from "./components/Products";
 import Cart from "./components/Cart";
 import ErrorPage from "./components/ErrorPage";
+import productsLoader from "./utils/productsLoader";
 
 const router = createBrowserRouter([
   {
@@ -12,7 +13,7 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       { path: "/", element: <Home /> },
-      { path: "products", element: <Products /> },
+      { path: "products", element: <Products />, loader: productsLoader },
       { path: "cart", element: <Cart /> },
     ],
     errorElement: <ErrorPage />,

@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Card from "./Card";
 
 const Products = () => {
@@ -9,12 +9,14 @@ const Products = () => {
       {products.map(product => {
         return (
           <div key={product.id} className="product">
-            <Card
-              title={product.title}
-              price={product.price}
-              desc={product.description}
-              img={product.image}
-            />
+            <Link to={`/products/${product.id}`}>
+              <Card
+                title={product.title}
+                price={product.price}
+                desc={product.description}
+                img={product.image}
+              />
+            </Link>
           </div>
         );
       })}

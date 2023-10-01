@@ -1,5 +1,5 @@
 import { fetchData } from "./fetchData";
 
 export default function loader() {
-  return fetchData();
+  return fetchData("https://fakestoreapi.com/products");
 }

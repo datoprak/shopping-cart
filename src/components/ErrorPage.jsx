@@ -8,10 +8,10 @@ const ErrorPage = () => {
     <div id="error-page">
       <h1>Oops!</h1>
       <p>Sorry, an unexpected error has occured.</p>
-      <p>{error.cause}</p>
+      <p>{error.status}</p>
       <pre>{error.statusText || error.message}</pre>
       <button>
-        <Link to={"/"}>Return to Homepage</Link>
+        <Link to="/">Return to Homepage</Link>
       </button>
     </div>
   );

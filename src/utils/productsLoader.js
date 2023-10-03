@@ -1,5 +1,5 @@
 import { fetchData } from "./fetchData";
 
-export default function loader() {
-  return fetchData("https://fakestoreapi.com/products");
+export default async function loader() {
+  return await fetchData("https://fakestoreapi.com/products");
 }

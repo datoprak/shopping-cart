@@ -19,9 +19,8 @@ const router = createBrowserRouter([
       {
         path: "products/:id",
         element: <Product />,
-        loader: ({ params }) => {
-          return fetchData(`https://fakestoreapi.com/products/${params.id}`);
-        },
+        loader: async ({ params }) =>
+          await fetchData(`https://fakestoreapi.com/products/${params.id}`),
       },
       { path: "cart", element: <Cart /> },
     ],

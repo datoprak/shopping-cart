@@ -1,4 +1,4 @@
-import { Await, Link, useLoaderData, useSearchParams } from "react-router-dom";
+import { Await, useLoaderData, useSearchParams } from "react-router-dom";
 import ProductsCard from "./ProductsCard";
 import { Suspense } from "react";
 
@@ -58,20 +58,15 @@ const Products = () => {
                   {displayedProducts.map(product => {
                     return (
                       <div key={product.id} className="product">
-                        <Link
+                        <ProductsCard
+                          title={product.title}
+                          price={product.price}
+                          desc={product.description}
+                          img={product.image}
                           to={`/products/${product.id}`}
-                          state={{
-                            search: `?${searchParams.toString()}`,
-                            category: categoryFilter,
-                          }}
-                        >
-                          <ProductsCard
-                            title={product.title}
-                            price={product.price}
-                            desc={product.description}
-                            img={product.image}
-                          />
-                        </Link>
+                          stateSearch={`?${searchParams.toString()}`}
+                          stateCategory={categoryFilter}
+                        />
                       </div>
                     );
                   })}

@@ -18,12 +18,7 @@ const Product = () => {
               <Link to={`..${backLink}`} relative="path">
                 {`Back to all ${category}`}
               </Link>
-              <ProductCard
-                title={product.title}
-                price={product.price}
-                desc={product.description}
-                img={product.image}
-              />
+              <ProductCard product={product} />
             </>
           );
         }}

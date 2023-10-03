@@ -6,11 +6,12 @@ const Layout = () => {
   const [cart, setCart] = useState([]);
   const [cartNumber, setCartNumber] = useState(0);
 
-  const handleAddCart = (title, img, quantity, price) => {
+  const handleAddCart = (product, quantity) => {
     if (quantity < 1) return;
-    const totalPrice = quantity * price;
+    const { id, title, image, price } = product;
+    const totalPrice = quantity * product.price;
     const copyCart = [...cart];
-    copyCart.push({ title, img, quantity, totalPrice, price });
+    copyCart.push({ id, title, image, quantity, totalPrice, price });
     setCart(copyCart);
     setCartNumber(copyCart.length);
     console.log(copyCart);
@@ -24,6 +25,7 @@ const Layout = () => {
           context={{
             handleAddCart,
             cartNumber,
+            cartState: [cart, setCart],
           }}
         />
       </main>

@@ -1,16 +1,16 @@
 import { useState } from "react";
 import { useOutletContext } from "react-router-dom";
 
-const ProductCard = ({ title, price, desc, img }) => {
+const ProductCard = ({ product }) => {
   const { handleAddCart } = useOutletContext();
   const [quantity, setQuantity] = useState(0);
 
   return (
     <div className="product-card">
-      <img src={img} alt={title} />
-      <div className="title">{title}</div>
-      <div className="price">${price}</div>
-      <div className="desc">{desc}</div>
+      <img src={product.image} alt={product.title} />
+      <div className="title">{product.title}</div>
+      <div className="price">${product.price}</div>
+      <div className="desc">{product.desc}</div>
       <div className="inputs">
         <button
           onClick={() => setQuantity(prev => (prev === 0 ? 0 : prev - 1))}
@@ -27,7 +27,7 @@ const ProductCard = ({ title, price, desc, img }) => {
       </div>
       <button
         onClick={() => {
-          handleAddCart(title, img, quantity, price);
+          handleAddCart(product, quantity);
         }}
       >
         Add to Cart

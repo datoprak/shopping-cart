@@ -59,10 +59,7 @@ const Products = () => {
                     return (
                       <div key={product.id} className="product">
                         <ProductsCard
-                          title={product.title}
-                          price={product.price}
-                          desc={product.description}
-                          img={product.image}
+                          product={product}
                           to={`/products/${product.id}`}
                           stateSearch={`?${searchParams.toString()}`}
                           stateCategory={categoryFilter}

@@ -1,5 +1,5 @@
 import { Await, Link, useLoaderData, useSearchParams } from "react-router-dom";
-import Card from "./Card";
+import ProductsCard from "./ProductsCard";
 import { Suspense } from "react";
 
 const Products = () => {
@@ -65,7 +65,7 @@ const Products = () => {
                             category: categoryFilter,
                           }}
                         >
-                          <Card
+                          <ProductsCard
                             title={product.title}
                             price={product.price}
                             desc={product.description}

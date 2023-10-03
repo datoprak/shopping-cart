@@ -1,6 +1,6 @@
 import { Await, Link, useLoaderData, useLocation } from "react-router-dom";
-import Card from "./Card";
 import { Suspense } from "react";
+import ProductCard from "./ProductCard";
 
 const Product = () => {
   const productPromise = useLoaderData();
@@ -18,7 +18,7 @@ const Product = () => {
               <Link to={`..${backLink}`} relative="path">
                 {`Back to all ${category}`}
               </Link>
-              <Card
+              <ProductCard
                 title={product.title}
                 price={product.price}
                 desc={product.description}

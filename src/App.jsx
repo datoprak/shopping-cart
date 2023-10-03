@@ -6,8 +6,8 @@ import Products from "./components/Products";
 import Cart from "./components/Cart";
 import ErrorPage from "./components/ErrorPage";
 import productsLoader from "./utils/productsLoader";
+import productLoader from "./utils/productLoader";
 import Product from "./components/Product";
-import { fetchData } from "./utils/fetchData";
 
 const router = createBrowserRouter([
   {
@@ -19,8 +19,7 @@ const router = createBrowserRouter([
       {
         path: "products/:id",
         element: <Product />,
-        loader: async ({ params }) =>
-          await fetchData(`https://fakestoreapi.com/products/${params.id}`),
+        loader: productLoader,
       },
       { path: "cart", element: <Cart /> },
     ],

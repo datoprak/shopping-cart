@@ -14,14 +14,14 @@ const Layout = () => {
     if (copyCart.some(pro => pro.title === title)) {
       const item = copyCart.find(pro => pro.title === title);
       item.quantity += quantity;
-      item.totalPrice = item.quantity * item.price;
+      item.totalPrice = (+item.quantity * +item.price).toFixed(2);
     } else {
-      const totalPrice = quantity * product.price;
+      const totalPrice = (+quantity * +product.price).toFixed(2);
       copyCart.push({ id, title, image, quantity, totalPrice, price });
     }
     let copyCartTotal = 0;
-    copyCart.forEach(item => (copyCartTotal += item.totalPrice));
-    setCartTotal(copyCartTotal);
+    copyCart.forEach(item => (copyCartTotal += +item.totalPrice));
+    setCartTotal(copyCartTotal.toFixed(2));
     setCart(copyCart);
     setCartNumber(prev => prev + quantity);
   };
@@ -34,6 +34,7 @@ const Layout = () => {
           context={{
             handleAddCart,
             cartState: [cart, setCart],
+            setCartNumber,
             cartTotal,
           }}
         />

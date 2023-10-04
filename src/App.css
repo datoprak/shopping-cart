@@ -23,3 +23,11 @@ input[type="number"] {
 img {
   width: 150px;
 }
+
+li > a.active {
+  color: red;
+}
+
+.filter-btns > button.active {
+  background-color: red;
+}

@@ -1,5 +1,5 @@
 import { Await, useLoaderData, useSearchParams } from "react-router-dom";
-import ProductsCard from "./ProductsCard";
+import ProductsCard from "../components/ProductsCard";
 import { Suspense } from "react";
 
 const Products = () => {
@@ -31,19 +31,29 @@ const Products = () => {
               <>
                 <div className="filter-btns">
                   <button
+                    className={categoryFilter === "electronics" ? "active" : ""}
                     onClick={() => handleFilter("category", "electronics")}
                   >
                     Electronics
                   </button>
-                  <button onClick={() => handleFilter("category", "jewelery")}>
+                  <button
+                    className={categoryFilter === "jewelery" ? "active" : ""}
+                    onClick={() => handleFilter("category", "jewelery")}
+                  >
                     Jewelery
                   </button>
                   <button
+                    className={
+                      categoryFilter === "men's clothing" ? "active" : ""
+                    }
                     onClick={() => handleFilter("category", "men's clothing")}
                   >
                     Men&apos;s Clothing
                   </button>
                   <button
+                    className={
+                      categoryFilter === "women's clothing" ? "active" : ""
+                    }
                     onClick={() => handleFilter("category", "women's clothing")}
                   >
                     Women&apos;s Clothing

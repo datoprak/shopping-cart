@@ -1,6 +1,6 @@
 import { Await, Link, useLoaderData, useLocation } from "react-router-dom";
 import { Suspense } from "react";
-import ProductCard from "./ProductCard";
+import ProductCard from "../components/ProductCard";
 
 const Product = () => {
   const productPromise = useLoaderData();

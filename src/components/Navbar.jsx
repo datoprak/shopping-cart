@@ -1,19 +1,19 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = ({ cartNumber }) => {
   return (
     <header>
-      <div className="logo">LOGO</div>
+      <Link to="/">LOGO</Link>
       <nav>
         <ul className="links">
           <li>
-            <Link to="/">HOME</Link>
+            <NavLink to="/">HOME</NavLink>
           </li>
           <li>
-            <Link to="/products">PRODUCTS</Link>
+            <NavLink to="/products">PRODUCTS</NavLink>
           </li>
           <li>
-            <Link to="/cart">CART({cartNumber})</Link>
+            <NavLink to="/cart">CART({cartNumber})</NavLink>
           </li>
         </ul>
       </nav>

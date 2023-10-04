@@ -1,14 +1,14 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./App.css";
 import Layout from "./components/Layout";
-import Home from "./components/Home";
-import Products from "./components/Products";
-import Cart from "./components/Cart";
-import ErrorPage from "./components/ErrorPage";
+import Home from "./pages/Home";
+import Products from "./pages/Products";
+import Cart from "./pages/Cart";
+import ErrorPage from "./pages/ErrorPage";
 import productsLoader from "./utils/productsLoader";
 import productLoader from "./utils/productLoader";
-import Product from "./components/Product";
-import Payment from "./components/Payment";
+import Product from "./pages/Product";
+import Payment from "./pages/Payment";
 
 const router = createBrowserRouter([
   {

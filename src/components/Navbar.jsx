@@ -1,21 +1,23 @@
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ cartNumber }) => {
   return (
-    <nav>
+    <header>
       <div className="logo">LOGO</div>
-      <ul className="links">
-        <li>
-          <Link to="/">HOME</Link>
-        </li>
-        <li>
-          <Link to="/products">PRODUCTS</Link>
-        </li>
-        <li>
-          <Link to="/cart">CART</Link>
-        </li>
-      </ul>
-    </nav>
+      <nav>
+        <ul className="links">
+          <li>
+            <Link to="/">HOME</Link>
+          </li>
+          <li>
+            <Link to="/products">PRODUCTS</Link>
+          </li>
+          <li>
+            <Link to="/cart">CART({cartNumber})</Link>
+          </li>
+        </ul>
+      </nav>
+    </header>
   );
 };
 export default Navbar;

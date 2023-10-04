@@ -5,27 +5,36 @@ import { useState } from "react";
 const Layout = () => {
   const [cart, setCart] = useState([]);
   const [cartNumber, setCartNumber] = useState(0);
+  const [cartTotal, setCartTotal] = useState(0);
 
   const handleAddCart = (product, quantity) => {
     if (quantity < 1) return;
     const { id, title, image, price } = product;
-    const totalPrice = quantity * product.price;
     const copyCart = [...cart];
-    copyCart.push({ id, title, image, quantity, totalPrice, price });
+    if (copyCart.some(pro => pro.title === title)) {
+      const item = copyCart.find(pro => pro.title === title);
+      item.quantity += quantity;
+      item.totalPrice = item.quantity * item.price;
+    } else {
+      const totalPrice = quantity * product.price;
+      copyCart.push({ id, title, image, quantity, totalPrice, price });
+    }
+    let copyCartTotal = 0;
+    copyCart.forEach(item => (copyCartTotal += item.totalPrice));
+    setCartTotal(copyCartTotal);
     setCart(copyCart);
-    setCartNumber(copyCart.length);
-    console.log(copyCart);
+    setCartNumber(prev => prev + quantity);
   };
 
   return (
     <>
-      <Navbar />
+      <Navbar cartNumber={cartNumber} />
       <main>
         <Outlet
           context={{
             handleAddCart,
-            cartNumber,
             cartState: [cart, setCart],
+            cartTotal,
           }}
         />
       </main>

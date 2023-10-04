@@ -8,6 +8,7 @@ import ErrorPage from "./components/ErrorPage";
 import productsLoader from "./utils/productsLoader";
 import productLoader from "./utils/productLoader";
 import Product from "./components/Product";
+import Payment from "./components/Payment";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,7 @@ const router = createBrowserRouter([
         loader: productLoader,
       },
       { path: "cart", element: <Cart /> },
+      { path: "payment", element: <Payment /> },
     ],
     errorElement: <ErrorPage />,
   },

@@ -1,0 +1,67 @@
+header {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  color: #cd5c08;
+}
+
+.logo > div,
+.logo > span {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+ul {
+  display: flex;
+  gap: 32px;
+}
+
+li {
+  list-style-type: none;
+}
+
+li > a {
+  font-size: 2rem;
+}
+
+li > a.active {
+  color: #6a9c89;
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.cart-logo {
+  position: relative;
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+
+.cart-logo > .material-symbols-outlined {
+  position: relative;
+  top: 4px;
+  z-index: 1;
+  font-size: 2rem;
+}
+
+.count {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+  display: block;
+  text-align: center;
+  background-color: #cd5c08;
+  color: black;
+}

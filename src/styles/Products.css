@@ -1,0 +1,36 @@
+.products-container {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-btns {
+  align-self: end;
+  padding: 16px;
+  display: flex;
+  gap: 8px;
+}
+
+.filter-btns > button {
+  padding: 8px 16px;
+  background-color: gainsboro;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.filter-btns > button:hover {
+  background-color: #c1d8c3;
+}
+
+.filter-btns > button.active {
+  background-color: #cd5c08;
+}
+
+.products {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  align-items: stretch;
+  justify-items: stretch;
+}

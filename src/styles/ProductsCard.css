@@ -1,0 +1,98 @@
+.products-card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: white;
+  display: grid;
+  width: 300px;
+  gap: 8px;
+  height: 100%;
+}
+
+.products-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6);
+}
+
+.products-card > a > img {
+  width: 100%;
+  height: 256px;
+  border-radius: 8px 8px 0 0;
+  object-fit: contain;
+}
+
+.products-info {
+  padding: 4px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.products-title {
+  color: #007185;
+}
+
+.products-price {
+  color: #b12704;
+}
+
+.inputs-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.products-inputs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.minus-btn,
+.plus-btn {
+  display: block;
+  width: 20px;
+  height: 32px;
+  background-color: gainsboro;
+  border: none;
+}
+
+.minus-btn:hover,
+.plus-btn:hover {
+  background-color: gray;
+}
+
+.minus-btn {
+  border-radius: 8px 0 0 8px;
+}
+
+.plus-btn {
+  border-radius: 0 8px 8px 0;
+}
+
+.products-inputs > input {
+  width: 52px;
+  height: 32px;
+  text-align: center;
+  border: 2px solid gainsboro;
+  outline: none;
+}
+
+.products-add-btn {
+  padding: 0 16px;
+  background-color: gainsboro;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  height: 32px;
+  text-align: center;
+}
+
+.products-add-btn:hover {
+  background-color: gray;
+}
+
+.filter-btns > button.active {
+  background-color: #6a9c89;
+}

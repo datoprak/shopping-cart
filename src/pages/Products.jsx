@@ -1,6 +1,7 @@
 import { Await, useLoaderData, useSearchParams } from "react-router-dom";
 import ProductsCard from "../components/ProductsCard";
 import { Suspense } from "react";
+import "../styles/Products.css"
 
 const Products = () => {
   const productsPromise = useLoaderData();
@@ -59,7 +60,7 @@ const Products = () => {
                     Women&apos;s Clothing
                   </button>
                   {categoryFilter && (
-                    <button onClick={() => handleFilter("category", null)}>
+                    <button className="reset-filter-btn" onClick={() => handleFilter("category", null)}>
                       Reset filter
                     </button>
                   )}

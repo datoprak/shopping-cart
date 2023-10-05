@@ -1,0 +1,30 @@
+#error-page {
+  padding: 32px;
+  padding-top: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+#error-page > h1 {
+  font-size: 3.5em;
+  font-weight: 700;
+}
+
+#error-page > p {
+  font-size: 2rem;
+  font-style: italic;
+}
+
+.error-btn {
+  padding: 8px 16px;
+  background-color: gainsboro;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.error-btn:hover {
+  background-color: #6a9c89;
+}

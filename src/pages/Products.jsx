@@ -1,7 +1,8 @@
 import { Await, useLoaderData, useSearchParams } from "react-router-dom";
 import ProductsCard from "../components/ProductsCard";
 import { Suspense } from "react";
-import "../styles/Products.css"
+import "../styles/Products.css";
+import Loading from "../components/Loading";
 
 const Products = () => {
   const productsPromise = useLoaderData();
@@ -19,7 +20,7 @@ const Products = () => {
 
   return (
     <div className="products-container">
-      <Suspense fallback={<h2>Loading...</h2>}>
+      <Suspense fallback={<Loading />}>
         <Await resolve={productsPromise.data}>
           {loadedProducts => {
             const displayedProducts = categoryFilter
@@ -60,7 +61,10 @@ const Products = () => {
                     Women&apos;s Clothing
                   </button>
                   {categoryFilter && (
-                    <button className="reset-filter-btn" onClick={() => handleFilter("category", null)}>
+                    <button
+                      className="reset-filter-btn"
+                      onClick={() => handleFilter("category", null)}
+                    >
                       Reset filter
                     </button>
                   )}

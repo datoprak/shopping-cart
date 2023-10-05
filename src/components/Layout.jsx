@@ -8,7 +8,7 @@ const Layout = () => {
   const [cartTotal, setCartTotal] = useState(0);
 
   const handleAddCart = (product, quantity) => {
-    if (quantity < 1) return;
+    if (quantity < 1) quantity = 1;
     const { id, title, image, price } = product;
     const copyCart = [...cart];
     if (copyCart.some(pro => pro.title === title)) {

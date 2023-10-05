@@ -2,6 +2,7 @@ import { Await, Link, useLoaderData, useLocation } from "react-router-dom";
 import { Suspense } from "react";
 import ProductCard from "../components/ProductCard";
 import "../styles/Product.css";
+import Loading from "../components/Loading";
 
 const Product = () => {
   const productPromise = useLoaderData();
@@ -11,7 +12,7 @@ const Product = () => {
   const category = location.state?.category || "products";
 
   return (
-    <Suspense fallback={<h2>Loading...</h2>}>
+    <Suspense fallback={<Loading />}>
       <Await resolve={productPromise.data}>
         {product => {
           return (

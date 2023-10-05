@@ -1,6 +1,7 @@
 import { Await, Link, useLoaderData, useLocation } from "react-router-dom";
 import { Suspense } from "react";
 import ProductCard from "../components/ProductCard";
+import "../styles/Product.css";
 
 const Product = () => {
   const productPromise = useLoaderData();
@@ -14,12 +15,12 @@ const Product = () => {
       <Await resolve={productPromise.data}>
         {product => {
           return (
-            <>
+            <div className="product">
               <Link to={`..${backLink}`} relative="path">
-                {`Back to all ${category}`}
+                &larr;{` Back to all ${category}`}
               </Link>
               <ProductCard product={product} />
-            </>
+            </div>
           );
         }}
       </Await>

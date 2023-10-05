@@ -1,0 +1,98 @@
+.product-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 16px;
+}
+
+.img-container {
+  width: 33vw;
+  border-radius: 8px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.img-container > img {
+  width: 85%;
+  height: 85%;
+  object-fit: contain;
+}
+
+.info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.product-title {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.product-desc {
+  font-style: italic;
+}
+
+.product-price {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.product-inputs {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.product-inputs-container {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.minus-btn,
+.plus-btn {
+  display: block;
+  width: 20px;
+  height: 32px;
+  background-color: gainsboro;
+  border: none;
+}
+
+.minus-btn:hover,
+.plus-btn:hover {
+  background-color: gray;
+}
+
+.minus-btn {
+  border-radius: 8px 0 0 8px;
+}
+
+.plus-btn {
+  border-radius: 0 8px 8px 0;
+}
+
+.product-inputs-container > input {
+  width: 52px;
+  height: 32px;
+  text-align: center;
+  border: 2px solid gainsboro;
+  outline: none;
+}
+
+.product-add-btn {
+  padding: 0 16px;
+  background-color: gainsboro;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  height: 32px;
+  text-align: center;
+}
+
+.product-add-btn:hover {
+  background-color: gray;
+}

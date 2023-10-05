@@ -1,0 +1,95 @@
+.cart-page {
+  padding: 32px;
+  display: grid;
+  gap: 16px;
+}
+
+.empty-cart {
+  font-size: 2.7rem;
+  font-weight: 700;
+  margin: 8% auto;
+  text-align: center;
+}
+
+.empty-cart-btn {
+  justify-self: end;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: gainsboro;
+  cursor: pointer;
+}
+
+.empty-cart-btn:hover {
+  background-color: red;
+}
+
+.cart-table {
+  display: grid;
+  grid-template-columns: 1fr 6fr 1fr 1fr;
+  align-items: center;
+}
+
+.cart-table-img {
+  justify-self: center;
+}
+
+.cart-table > div {
+  font-weight: 700;
+}
+
+.cart-card {
+  /* display: grid;
+  grid-template-columns: 1fr 6fr 1fr 1fr;
+  grid-auto-rows: 85px;
+  align-items: center; */
+  border: 2px solid gray;
+  border-radius: 8px;
+  padding: 8px 0;
+}
+
+.cart-card > a {
+  display: grid;
+  grid-template-columns: 1fr 6fr 1fr 1fr;
+  grid-auto-rows: 85px;
+  align-items: center;
+}
+
+.cart-card > a > img {
+  width: 64px;
+  justify-self: center;
+  height: 100%;
+}
+
+.item-quantity,
+.item-total-price,
+.cart-table-quantity,
+.cart-table-price {
+  justify-self: center;
+}
+
+.cart-total-price {
+  justify-self: center;
+  font-size: 1.5rem;
+}
+
+.cart-total-price > span {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.cart-page > a {
+  justify-self: center;
+}
+
+.payment-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: gainsboro;
+  cursor: pointer;
+}
+
+.payment-btn:hover {
+  background-color: #6a9c89;
+}

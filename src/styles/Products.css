@@ -20,11 +20,15 @@
 }
 
 .filter-btns > button:hover {
-  background-color: #c1d8c3;
+  background-color: #6a9c89;
 }
 
 .filter-btns > button.active {
   background-color: #cd5c08;
+}
+
+.reset-filter-btn:hover {
+  background-color: red !important
 }
 
 .products {

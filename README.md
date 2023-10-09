@@ -8,3 +8,4 @@ A fake shop site created using React. It consists of the home page, products pag
 
 - Vite + React
 - React Router v6.4
+- [Fake Store API](https://fakestoreapi.com/)

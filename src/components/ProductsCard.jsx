@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Link, useOutletContext } from "react-router-dom";
 import "../styles/ProductsCard.css";
 
 const ProductsCard = ({ product, to, stateSearch, stateCategory }) => {
   const { handleAddCart } = useOutletContext();
   const [quantity, setQuantity] = useState(0);
+  const btnRef = useRef(null);
 
   return (
     <div className="products-card">
@@ -38,7 +39,8 @@ const ProductsCard = ({ product, to, stateSearch, stateCategory }) => {
         </div>
         <button
           className="products-add-btn"
-          onClick={() => handleAddCart(product, quantity)}
+          onClick={() => handleAddCart(product, quantity, btnRef)}
+          ref={btnRef}
         >
           Add to Cart
         </button>

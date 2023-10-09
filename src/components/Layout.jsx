@@ -7,7 +7,7 @@ const Layout = () => {
   const [cartNumber, setCartNumber] = useState(0);
   const [cartTotal, setCartTotal] = useState(0);
 
-  const handleAddCart = (product, quantity) => {
+  const handleAddCart = (product, quantity, btnRef) => {
     if (quantity < 1) quantity = 1;
     const { id, title, image, price } = product;
     const copyCart = [...cart];
@@ -24,6 +24,15 @@ const Layout = () => {
     setCartTotal(copyCartTotal.toFixed(2));
     setCart(copyCart);
     setCartNumber(prev => prev + quantity);
+    btnRef.current.textContent = "Added to cart";
+    btnRef.current.style.backgroundColor = "#6a9c89";
+    btnRef.current.disabled = true;
+
+    setTimeout(() => {
+      btnRef.current.textContent = "Add to Cart";
+      btnRef.current.style.backgroundColor = "gainsboro";
+      btnRef.current.disabled = false;
+    }, 500);
   };
 
   return (
